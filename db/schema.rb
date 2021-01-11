@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2021_01_10_181744) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "line_1", default: "", null: false
-    t.string "Street", default: "", null: false
-    t.string "Landmark", default: "", null: false
-    t.string "City", default: "", null: false
-    t.string "State", default: "", null: false
+    t.string "street", default: ""
+    t.string "landmark", default: ""
+    t.string "city", default: ""
+    t.string "state", default: "", null: false
     t.string "pin_code", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

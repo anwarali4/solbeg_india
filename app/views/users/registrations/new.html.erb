@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email", required: true %>
   </div>
 
   <div class="field">
@@ -18,13 +18,22 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", required: true %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+
+ <%= f.fields_for :address do |address_fields| %>
+    <%= address_fields.text_field :line_1 %>
+    <%= address_fields.text_field :street %>
+    <%= address_fields.text_field :landmark %>
+    <%= address_fields.text_field :city %>
+    <%= address_fields.text_field :pin_code %>
+
+  <% end %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
