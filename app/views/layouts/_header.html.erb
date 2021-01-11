@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default custom-navbar" role="navigation">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+    <div class="col-sm-8 col-md-4">
+    </div>
+    <ul class="nav navbar-nav navbar-right custom-right-navbar">
+      <%if current_user %>
+        <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>
+        <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></li>
+      <%else%>
+        <li><%= link_to 'LOG IN', new_user_session_path%></li>
+        <li><%= link_to 'USER SIGN UP', new_user_registration_path(type: 'user') %></li>
+        <li><%= link_to 'ADMIN SIGN UP', new_user_registration_path(type: 'admin') %></li>
+      <%end%>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>

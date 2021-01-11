@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  pool: 5
+  # these are our new parameters
+  encoding: UTF-8
+  database: solbeg_india
+  host: localhost
+  username: anwar
+  password: postgres
