@@ -9,8 +9,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :address, allow_destroy: true
   ROLE = %w(Admin Customer)  
 
-  validates :name, :telephone_no, :postal_code, presence: true
-  has_secure_token :invitation_token
+  validates :name, presence: true
   validates :type, inclusion: { in: ROLE }
 
   ROLE.each do |method|

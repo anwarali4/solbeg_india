@@ -1,0 +1,14 @@
+  <table>
+    <tr>
+      <th>Customer ID</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+    <% @customers.each do |customer|%>
+      <tr>
+        <td><%= customer.id%></td>
+        <td><%= customer.name%></td>
+        <td><%= link_to 'Edit', edit_admin_customer_path(customer.id) %></td>
+      </tr>
+    <% end %>
+  </table>

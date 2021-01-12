@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	before_action :check_if_customer_or_admin, only: :index
+  before_action :check_if_customer_or_admin, only: :index
 
 	
   def index; end
@@ -7,8 +7,9 @@ class HomeController < ApplicationController
 
   private
     def check_if_customer_or_admin
-        if current_user && (current_user.teacher? || current_user.admin?)
-            redirect_to dashboard_path
+    	binding.pry
+        if current_user && (current_user.customer? || current_user.admin?)
+            redirect_to dashboard_customers_path
         end
     end
 end

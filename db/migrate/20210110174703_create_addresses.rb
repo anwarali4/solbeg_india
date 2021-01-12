@@ -1,6 +1,7 @@
 class CreateAddresses < ActiveRecord::Migration[6.0]
   def change
     create_table :addresses do |t|
+      t.belongs_to :user, index: true, forgein_key: true
       t.string :line_1,    null: false, default: ""
       t.string :street,    default: ""
       t.string :landmark,  default: ""

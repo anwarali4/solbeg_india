@@ -1,0 +1,11 @@
+<h2>Edit profile</h2>
+
+<%= form_for(@admin, url: admin_path, method: :patch) do |f| %>
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone, autofocus: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

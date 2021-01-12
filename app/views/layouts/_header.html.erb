@@ -5,8 +5,8 @@
     </div>
     <ul class="nav navbar-nav navbar-right custom-right-navbar">
       <%if current_user %>
-        <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>
-        <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></li>
+        <li><a href="<%=dashboard_customers_path%>" class="nav-link">DASHBOARD</a></li>
+        <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></li>
       <%else%>
         <li><%= link_to 'LOG IN', new_user_session_path%></li>
         <li><%= link_to 'USER SIGN UP', new_user_registration_path(type: 'user') %></li>

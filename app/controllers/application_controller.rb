@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
   protected
     def after_sign_in_path_for(_resource)
       if current_user.admin?
-         admin_dashboard_path
-      elsif current_user.customer?
-        dashboard_path
+         dashboard_admins_path
+      else
+        root_path
       end
     end
 

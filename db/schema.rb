@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_01_10_181744) do
   end
 
   create_table "addresses", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "line_1", default: "", null: false
     t.string "street", default: ""
     t.string "landmark", default: ""
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_01_10_181744) do
     t.string "pin_code", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_01_10_181744) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "type", null: false
+    t.string "telephone"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
