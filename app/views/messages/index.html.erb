@@ -10,7 +10,11 @@
           <% if message.media_assests.attached? %>
             <% message.media_assests.each do |ma| %>
               <li>
-                <%= image_tag ma.variant(resize: "100x100>") %>
+                <% if ma.variable? %>
+                  <%= image_tag ma.variant(resize: "100x100>") %>
+                <% elsif %>
+                  <%= image_tag ma.preview(resize_to_limit: [100, 100]) %>
+                <% end %>
                 <span>
                   <%= link_to 'Remove', delete_attachment_message_path(ma.id), method: :get, data: { confirm: 'Are you sure?' } %>
                   <i class="fas fa-trash"></i>
