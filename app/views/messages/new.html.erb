@@ -1,0 +1,20 @@
+<h1> Upload media Assets </h1>
+<div>
+	<%= form_for(@message, url: messages_path, method: :post) do |f| %>
+	  <%= f.label :media_assests, "Select an Image/Video/PDF file"  %>
+	  <%= f.file_field :media_assests, multiple: true,  accept: 'image/*, video/*, .pdf' %>
+	  <%= f.submit 'Upload'%>
+	<% end%>
+</div>
+
+<%#= form_for(@customer, url: messages_path, method: :post) do |f| %>
+<%# end%>
+<br>
+<br>
+<div>
+  <%= form_for(@message, url: messages_path, method: :post) do |f| %>
+  <%= f.label :image, "Select an Image"  %>
+  <%= f.file_field :media_assests, multiple: true,  accept: 'image/* ' %>
+  <%= f.submit 'Upload Image'%>
+<% end %>
+</div>

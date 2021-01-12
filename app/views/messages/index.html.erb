@@ -1,0 +1,26 @@
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>url</th>
+    </tr>
+    <% @messages.each do |message|%>
+      <tr>
+        <td><%= message.id%></td>
+        <% binding.pry %>
+        <td><ul>
+          <% if message.media_assests.attached? %>
+            <% message.media_assests.each do |ma| %>
+              <li>
+                <% binding.pry %>
+                <%= image_tag ma.variant(resize: "100x100>") %>
+                <span>
+                  <%= link_to 'Remove', delete_image_attachment_space_url(ma.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <i class="fas fa-trash"></i>
+                </span>
+              </li>
+            <% end %>
+          <% end %>
+        </ul></td>
+      </tr>
+    <% end %>
+  </table>
