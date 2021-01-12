@@ -6,9 +6,15 @@
 	  <%= f.submit 'Upload'%>
 	<% end%>
 </div>
-
-<%#= form_for(@customer, url: messages_path, method: :post) do |f| %>
-<%# end%>
+<br>
+<br>
+<div>
+<%= form_for(@message, url: messages_path, method: :post) do |f| %>
+    <%= f.label :media_assests, "Select an MP4"  %>
+	  <%= f.file_field :media_assests, multiple: true,  accept: "video/mp4" %>
+	  <%= f.submit 'Upload mp4'%>
+	<% end%>
+</div>
 <br>
 <br>
 <div>
