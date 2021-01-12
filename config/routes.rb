@@ -19,5 +19,9 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :edit, :update]
   end
 
-  resources :messages, except: [:edit, :update]
+  resources :messages, except: [:edit, :update] do
+    member do
+      get :delete_attachment
+    end   
+  end
 end

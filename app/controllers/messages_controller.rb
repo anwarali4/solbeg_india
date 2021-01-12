@@ -20,10 +20,10 @@ class MessagesController < ApplicationController
 		end
   end
 
-  def destroy
+  def delete_attachment
     @media_assest = ActiveStorage::Blob.find_signed(params[:id])
     @media_assest.purge_later
-    redirect_to redirect_to  messages_path
+    redirect_to  messages_path
   end
 
   private
